@@ -11,8 +11,8 @@ app.listen(3344, function(){
 });
 
 const rootController = require("./routes/index"),
-    ceosController = require("./routes/ceos");
+    restaurantsController = require("./routes/ceos");
 
 
 app.use("/", rootController);
-app.use("/ceos", ceosController);
+app.use("/ceos", restaurantsController);

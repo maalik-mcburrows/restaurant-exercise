@@ -1,6 +1,6 @@
 const express = require("express"),
     router = express.Router(),
-    ceoModel = require("../models/ceoModel");
+    restaurantModel = require("../models/restaurantModel");
 
 
 router.get("/:id?", async (req, res) => {
@@ -8,9 +8,9 @@ router.get("/:id?", async (req, res) => {
     let executiveData = [];
 
     if (!!id) {
-        executiveData = await ceoModel.getById(id);
+        executiveData = await restaurantModel.getById(id);
     }   else   {
-        executiveData = await ceoModel.getAll();
+        executiveData = await restaurantModel.getAll();
     }
     res 
         .render("template", {
@@ -19,7 +19,7 @@ router.get("/:id?", async (req, res) => {
                 arrayOfData: executiveData
             },
             partials: {
-                partial: "partial-ceos"
+                partial: "partial-restaurant"
             }
         });
 });
