@@ -1,0 +1,4 @@
+<h2>This is the foo partial</h2>
+${arrayOfData.map(restaurant => 
+    `<li><a href="ceos/${restaurant.id}">${restaurant.name} === ${restaurant.address} === ${restaurant.category}</a></li>`
+).join(" ")}
