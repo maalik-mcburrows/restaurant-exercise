@@ -11,11 +11,11 @@ const express = require("express"),
 //         .end();
 // }
 
-router.get("/", (req, res) => {
-    const snippet = "<h1>Hello World</h1>";
+router.get("/", (req, res, next) => {
+    const snippet = "<h1>Hello Mars</h1>";
     res.render("template", {
        locals: {
-           title: "Hello MARS"
+           title: snippet
        },
        partials: {
            partial: "partial-index"

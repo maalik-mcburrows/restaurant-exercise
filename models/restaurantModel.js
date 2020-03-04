@@ -1,10 +1,16 @@
 const db = require("./conn");
 
 class ExecutiveList {
-    constructor(Name, Address, Category){
-        this.Name = Name;
-        this.Address = Address;
-        this.Category = Category;
+    constructor(id, name, category, distance, stars, fav_dish, does_takeout, prev_trip){
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.category = category;
+        this.distance = distance;
+        this.stars = stars;
+        this.fav_dish = fav_dish;
+        this.does_takeout = does_takeout;
+        this.prev_trip = prev_trip;
     }
   
     static async getAll() {
@@ -30,4 +36,7 @@ class ExecutiveList {
     }
 };
 
+
 module.exports = ExecutiveList;
+
+

@@ -1,4 +1,7 @@
 const express = require("express"),
+    path = require('path'),
+    cookieParser = require('cookie-parser'),
+    logger = require('morgan'),
     es6Renderer = require("express-es6-template-engine"),
     app = express();
 
@@ -11,8 +14,8 @@ app.listen(3344, function(){
 });
 
 const rootController = require("./routes/index"),
-    restaurantsController = require("./routes/ceos");
+    restaurantsController = require("./routes/restaurants");
 
 
 app.use("/", rootController);
-app.use("/ceos", restaurantsController);
+app.use("/restaurants", restaurantsController);
